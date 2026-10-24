@@ -1,0 +1,112 @@
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   1%|          | 2/339 [00:00<00:35,  9.49it/s]Loading weights:   6%|▋         | 22/339 [00:00<00:04, 77.10it/s]Loading weights:  12%|█▏        | 42/339 [00:00<00:04, 69.92it/s]Loading weights:  35%|███▍      | 117/339 [00:00<00:01, 202.03it/s]Loading weights:  42%|████▏     | 143/339 [00:00<00:00, 203.30it/s]Loading weights:  52%|█████▏    | 176/339 [00:01<00:00, 222.92it/s]Loading weights:  60%|█████▉    | 202/339 [00:01<00:00, 157.54it/s]Loading weights:  81%|████████  | 275/339 [00:01<00:00, 205.95it/s]Loading weights: 100%|██████████| 339/339 [00:01<00:00, 213.66it/s]
+model=Qwen/Qwen2.5-7B-Instruct layers=28 kv_heads=4 bits=2 scheme=token
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (2517232 > 131072). Running this sequence through the model will result in indexing errors
+task lm: 8 samples, 32768 tokens
+task needle: 8 samples, 65295 tokens
+task gsm8k: 16 samples, 2946 tokens
+[check] lm: no-quant KL=0.00e+00 acc=nan | all heads 2-bit KL=8.0146 acc=nan
+[check] needle: no-quant KL=0.00e+00 acc=1.00 | all heads 2-bit KL=5.5658 acc=0.00
+[check] gsm8k: no-quant KL=0.00e+00 acc=nan | all heads 2-bit KL=7.7734 acc=nan
+layer 0 done (4/112 heads), eta 16.7 min
+layer 1 done (8/112 heads), eta 16.2 min
+layer 2 done (12/112 heads), eta 17.1 min
+layer 3 done (16/112 heads), eta 16.1 min
+layer 4 done (20/112 heads), eta 15.3 min
+layer 5 done (24/112 heads), eta 14.5 min
+layer 6 done (28/112 heads), eta 13.7 min
+layer 7 done (32/112 heads), eta 13.0 min
+layer 8 done (36/112 heads), eta 12.4 min
+layer 9 done (40/112 heads), eta 11.8 min
+layer 10 done (44/112 heads), eta 11.1 min
+layer 11 done (48/112 heads), eta 10.5 min
+layer 12 done (52/112 heads), eta 9.9 min
+layer 13 done (56/112 heads), eta 9.2 min
+layer 14 done (60/112 heads), eta 8.5 min
+layer 15 done (64/112 heads), eta 7.8 min
+layer 16 done (68/112 heads), eta 7.2 min
+layer 17 done (72/112 heads), eta 6.5 min
+layer 18 done (76/112 heads), eta 5.8 min
+layer 19 done (80/112 heads), eta 5.2 min
+layer 20 done (84/112 heads), eta 4.5 min
+layer 21 done (88/112 heads), eta 3.9 min
+layer 22 done (92/112 heads), eta 3.2 min
+layer 23 done (96/112 heads), eta 2.6 min
+layer 24 done (100/112 heads), eta 1.9 min
+layer 25 done (104/112 heads), eta 1.3 min
+layer 26 done (108/112 heads), eta 0.6 min
+layer 27 done (112/112 heads), eta 0.0 min
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<00:34,  9.89it/s]Loading weights:   1%|          | 2/339 [00:00<00:36,  9.33it/s]Loading weights:   1%|          | 4/339 [00:00<00:25, 13.09it/s]Loading weights:  12%|█▏        | 42/339 [00:00<00:02, 144.29it/s]Loading weights:  18%|█▊        | 60/339 [00:00<00:02, 131.41it/s]Loading weights:  22%|██▏       | 74/339 [00:00<00:03, 86.12it/s] Loading weights:  49%|████▊     | 165/339 [00:01<00:00, 202.06it/s]Loading weights:  73%|███████▎  | 246/339 [00:01<00:00, 310.00it/s]Loading weights:  83%|████████▎ | 283/339 [00:01<00:00, 243.59it/s]Loading weights: 100%|██████████| 339/339 [00:01<00:00, 213.84it/s]
+model=Qwen/Qwen2.5-7B-Instruct layers=28 kv_heads=4 bits=4 scheme=token
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (2517232 > 131072). Running this sequence through the model will result in indexing errors
+task lm: 8 samples, 32768 tokens
+task needle: 8 samples, 65295 tokens
+task gsm8k: 16 samples, 2946 tokens
+[check] lm: no-quant KL=0.00e+00 acc=nan | all heads 4-bit KL=7.4043 acc=nan
+[check] needle: no-quant KL=0.00e+00 acc=1.00 | all heads 4-bit KL=4.7643 acc=0.00
+[check] gsm8k: no-quant KL=0.00e+00 acc=nan | all heads 4-bit KL=8.6997 acc=nan
+layer 0 done (4/112 heads), eta 17.4 min
+layer 1 done (8/112 heads), eta 17.3 min
+layer 2 done (12/112 heads), eta 17.0 min
+layer 3 done (16/112 heads), eta 16.1 min
+layer 4 done (20/112 heads), eta 15.2 min
+layer 5 done (24/112 heads), eta 14.5 min
+layer 6 done (28/112 heads), eta 15.0 min
+layer 7 done (32/112 heads), eta 15.8 min
+layer 8 done (36/112 heads), eta 16.2 min
+layer 9 done (40/112 heads), eta 16.2 min
+layer 10 done (44/112 heads), eta 16.0 min
+layer 11 done (48/112 heads), eta 15.6 min
+layer 12 done (52/112 heads), eta 15.0 min
+layer 13 done (56/112 heads), eta 13.6 min
+layer 14 done (60/112 heads), eta 12.3 min
+layer 15 done (64/112 heads), eta 11.2 min
+layer 16 done (68/112 heads), eta 10.0 min
+layer 17 done (72/112 heads), eta 9.0 min
+layer 18 done (76/112 heads), eta 8.0 min
+layer 19 done (80/112 heads), eta 7.0 min
+layer 20 done (84/112 heads), eta 6.1 min
+layer 21 done (88/112 heads), eta 5.1 min
+layer 22 done (92/112 heads), eta 4.2 min
+layer 23 done (96/112 heads), eta 3.4 min
+layer 24 done (100/112 heads), eta 2.5 min
+layer 25 done (104/112 heads), eta 1.6 min
+layer 26 done (108/112 heads), eta 0.8 min
+layer 27 done (112/112 heads), eta 0.0 min
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<00:34,  9.76it/s]Loading weights:   1%|          | 2/339 [00:00<00:36,  9.25it/s]Loading weights:   4%|▍         | 13/339 [00:00<00:10, 31.81it/s]Loading weights:  19%|█▉        | 66/339 [00:00<00:01, 155.02it/s]Loading weights:  30%|██▉       | 101/339 [00:00<00:01, 190.74it/s]Loading weights:  38%|███▊      | 129/339 [00:00<00:01, 206.51it/s]Loading weights:  45%|████▍     | 152/339 [00:01<00:01, 123.29it/s]Loading weights:  74%|███████▍  | 251/339 [00:01<00:00, 268.87it/s]Loading weights:  85%|████████▌ | 289/339 [00:01<00:00, 225.03it/s]Loading weights: 100%|██████████| 339/339 [00:01<00:00, 213.64it/s]
+model=Qwen/Qwen2.5-7B-Instruct layers=28 kv_heads=4 bits=2 scheme=kivi
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (2517232 > 131072). Running this sequence through the model will result in indexing errors
+task lm: 8 samples, 32768 tokens
+task needle: 8 samples, 65295 tokens
+task gsm8k: 16 samples, 2946 tokens
+[check] lm: no-quant KL=0.00e+00 acc=nan | all heads 2-bit KL=0.7390 acc=nan
+[check] needle: no-quant KL=0.00e+00 acc=1.00 | all heads 2-bit KL=1.8949 acc=0.12
+[check] gsm8k: no-quant KL=0.00e+00 acc=nan | all heads 2-bit KL=0.9065 acc=nan
+layer 0 done (4/112 heads), eta 17.0 min
+layer 1 done (8/112 heads), eta 16.4 min
+layer 2 done (12/112 heads), eta 15.8 min
+layer 3 done (16/112 heads), eta 15.2 min
+layer 4 done (20/112 heads), eta 14.5 min
+layer 5 done (24/112 heads), eta 13.9 min
+layer 6 done (28/112 heads), eta 13.3 min
+layer 7 done (32/112 heads), eta 12.6 min
+layer 8 done (36/112 heads), eta 12.0 min
+layer 9 done (40/112 heads), eta 11.4 min
+layer 10 done (44/112 heads), eta 10.7 min
+layer 11 done (48/112 heads), eta 10.1 min
+layer 12 done (52/112 heads), eta 9.5 min
+layer 13 done (56/112 heads), eta 8.8 min
+layer 14 done (60/112 heads), eta 8.2 min
+layer 15 done (64/112 heads), eta 7.6 min
+layer 16 done (68/112 heads), eta 6.9 min
+layer 17 done (72/112 heads), eta 6.3 min
+layer 18 done (76/112 heads), eta 5.7 min
+layer 19 done (80/112 heads), eta 5.1 min
+layer 20 done (84/112 heads), eta 4.4 min
+layer 21 done (88/112 heads), eta 3.8 min
+layer 22 done (92/112 heads), eta 3.2 min
+layer 23 done (96/112 heads), eta 2.5 min
+layer 24 done (100/112 heads), eta 1.9 min
+layer 25 done (104/112 heads), eta 1.3 min
+layer 26 done (108/112 heads), eta 0.6 min
+layer 27 done (112/112 heads), eta 0.0 min
+SENS_DONE

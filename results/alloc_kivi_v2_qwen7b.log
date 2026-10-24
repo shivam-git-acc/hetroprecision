@@ -1,0 +1,22 @@
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<00:35,  9.42it/s]Loading weights:   1%|          | 2/339 [00:00<00:37,  9.09it/s]Loading weights:   2%|▏         | 7/339 [00:00<00:24, 13.30it/s]Loading weights:  24%|██▍       | 83/339 [00:00<00:01, 154.56it/s]Loading weights:  42%|████▏     | 141/339 [00:01<00:01, 151.50it/s]Loading weights:  71%|███████   | 239/339 [00:01<00:00, 274.64it/s]Loading weights:  82%|████████▏ | 278/339 [00:01<00:00, 213.69it/s]Loading weights: 100%|██████████| 339/339 [00:01<00:00, 212.97it/s]
+Using the latest cached version of the dataset since Salesforce/wikitext couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'wikitext-2-raw-v1' at /data/cs3406/team19/.cache/huggingface/datasets/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3 (last modified on Sat Oct 17 10:21:07 2026).
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (298938 > 131072). Running this sequence through the model will result in indexing errors
+Using the latest cached version of the dataset since Salesforce/wikitext couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'wikitext-2-raw-v1' at /data/cs3406/team19/.cache/huggingface/datasets/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3 (last modified on Sat Oct 17 10:21:07 2026).
+Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /data/cs3406/team19/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Sat Oct 17 10:46:26 2026).
+allocation                        bits | lm: KL / ppl / acc | needle: KL / ppl / acc | gsm8k: KL / ppl / acc
+bf16                             16.00 | 0.000 / 6.05 / nan | 0.000 / 1.00 / 1.00 | 0.000 / 3.65 / nan
+uniform-2                         2.25 | 0.741 / 11.75 / nan | 0.786 / 2.20 / 0.38 | 0.579 / 4.14 / nan
+uniform-3                         3.25 | 0.054 / 6.29 / nan | 0.000 / 1.00 / 1.00 | 0.077 / 3.63 / nan
+uniform-4                         4.25 | 0.012 / 6.09 / nan | 0.000 / 1.00 / 1.00 | 0.020 / 3.68 / nan
+uniform-8                         8.25 | 0.001 / 6.05 / nan | 0.000 / 1.00 / 1.00 | 0.001 / 3.65 / nan
+top1-bf16 rest-2                  2.37 | 0.609 / 10.30 / nan | 0.537 / 1.71 / 0.62 | 0.547 / 4.03 / nan
+top5-bf16 rest-2                  2.86 | 0.450 / 8.84 / nan | 0.662 / 1.94 / 0.53 | 0.476 / 3.84 / nan
+top5-8bit rest-2                  2.52 | 0.452 / 8.86 / nan | 0.179 / 1.20 / 0.81 | 0.444 / 3.74 / nan
+top10-bf16 rest-2                 3.48 | 0.301 / 7.69 / nan | 0.282 / 1.33 / 0.81 | 0.350 / 3.60 / nan
+random5-bf16 rest-2 (control)     2.86 | 0.702 / 11.26 / nan | 0.400 / 1.49 / 0.66 | 0.480 / 4.01 / nan
+top5-bf16 rest-3                  3.82 | 0.047 / 6.27 / nan | 0.000 / 1.00 / 1.00 | 0.070 / 3.70 / nan
+top5-bf16 rest-4                  4.77 | 0.011 / 6.09 / nan | 0.000 / 1.00 / 1.00 | 0.015 / 3.60 / nan
+KIVI2_DONE

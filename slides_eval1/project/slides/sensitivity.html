@@ -1,0 +1,29 @@
+<section id="sensitivity" data-transition="fade" style="background:#EEECE6;color:#1B2433;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B35A17">Head sensitivity · one KV head at 2-bit, per-token</p>
+<h2 style="font-size:64px;font-weight:600;line-height:1.15;color:#1B2433">One KV head out of 112 can break the model</h2>
+</div>
+<div style="display:flex;gap:72px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<p style="font-size:26px;color:#4A5568">KL divergence from BF16 when only this head is quantized (WikiText)</p>
+<div style="display:flex;flex-direction:row;gap:20px;align-items:center"><p style="width:120px;font-size:26px;font-family:'JetBrains Mono', 'Courier New', monospace">L0.kv0</p><div style="width:880px;height:32px;background:#D9762B;border-radius:0 4px 4px 0"></div><p style="font-size:24px">6.14</p></div>
+<div style="display:flex;flex-direction:row;gap:20px;align-items:center"><p style="width:120px;font-size:26px;font-family:'JetBrains Mono', 'Courier New', monospace">L0.kv1</p><div style="width:56px;height:32px;background:#D9762B;border-radius:0 4px 4px 0"></div><p style="font-size:24px">0.39</p></div>
+<div style="display:flex;flex-direction:row;gap:20px;align-items:center"><p style="width:120px;font-size:26px;font-family:'JetBrains Mono', 'Courier New', monospace">L0.kv2</p><div style="width:36px;height:32px;background:#D9762B;border-radius:0 4px 4px 0"></div><p style="font-size:24px">0.25</p></div>
+<div style="display:flex;flex-direction:row;gap:20px;align-items:center"><p style="width:120px;font-size:26px;font-family:'JetBrains Mono', 'Courier New', monospace">L27.kv1</p><div style="width:35px;height:32px;background:#D9762B;border-radius:0 4px 4px 0"></div><p style="font-size:24px">0.25</p></div>
+<div style="display:flex;flex-direction:row;gap:20px;align-items:center"><p style="width:120px;font-size:26px;font-family:'JetBrains Mono', 'Courier New', monospace">L0.kv3</p><div style="width:25px;height:32px;background:#D9762B;border-radius:0 4px 4px 0"></div><p style="font-size:24px">0.17</p></div>
+<div style="display:flex;flex-direction:row;gap:20px;align-items:center"><p style="width:120px;font-size:26px;font-family:'JetBrains Mono', 'Courier New', monospace">L4.kv1</p><div style="width:8px;height:32px;background:#8A94A6;border-radius:0 4px 4px 0"></div><p style="font-size:24px">0.058</p></div>
+<div style="display:flex;flex-direction:row;gap:20px;align-items:center"><p style="width:120px;font-size:26px;font-family:'JetBrains Mono', 'Courier New', monospace">L19.kv0</p><div style="width:7px;height:32px;background:#8A94A6;border-radius:0 4px 4px 0"></div><p style="font-size:24px">0.051</p></div>
+<div style="display:flex;flex-direction:row;gap:20px;align-items:center"><p style="width:120px;font-size:26px;font-family:'JetBrains Mono', 'Courier New', monospace">median</p><div style="width:2px;height:32px;background:#8A94A6"></div><p style="font-size:24px">0.0096</p></div>
+<div style="display:flex;flex-direction:row;gap:40px;align-items:center">
+<div style="display:flex;flex-direction:row;gap:12px;align-items:center"><div style="width:28px;height:28px;background:#D9762B;border-radius:4px"></div><p style="font-size:24px;color:#4A5568">Key-outlier head (previous slide)</p></div>
+<div style="display:flex;flex-direction:row;gap:12px;align-items:center"><div style="width:28px;height:28px;background:#8A94A6;border-radius:4px"></div><p style="font-size:24px;color:#4A5568">Other head</p></div>
+</div>
+</div>
+<div style="width:460px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:8px"><p style="font-size:64px;font-weight:700;color:#B35A17">8/8 → 0/8</p><p style="font-size:26px;line-height:1.4;color:#4A5568">needle answers correct when only L0.kv0 is quantized</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><p style="font-size:64px;font-weight:700;color:#1B2433">83–99%</p><p style="font-size:26px;line-height:1.4;color:#4A5568">of all single-head damage sits in layer 0 (LM 83%, GSM8K 80%, needle 99%)</p></div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7280">Source: results/sens_qwen7b.csv · K and V fake-quantized after RoPE inside attention · all 112 × 3 tasks × 3 configs in HEAD_RESULTS.md §1</p>
+<aside>We quantized one KV head at a time and measured how far the output distribution moves. The answer is extremely skewed: L0.kv0 alone does 77 percent of the damage of quantizing all 112 heads, and it breaks needle retrieval completely. The top five heads are exactly the five key-outlier heads.</aside>
+</section>

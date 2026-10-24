@@ -1,0 +1,5 @@
+starting llama at 02:42
+Fetching 14 files:   0%|          | 0/14 [00:00<?, ?it/s]Fetching 14 files:  14%|█▍        | 2/14 [00:00<00:02,  4.22it/s]Fetching 14 files:  36%|███▌      | 5/14 [00:00<00:01,  8.63it/s]Fetching 14 files:  50%|█████     | 7/14 [00:01<00:01,  6.76it/s]Fetching 14 files:  64%|██████▍   | 9/14 [00:01<00:00,  8.33it/s]Fetching 14 files:  71%|███████▏  | 10/14 [00:19<00:00,  8.33it/s]Fetching 14 files:  79%|███████▊  | 11/14 [06:42<03:24, 68.23s/it]Fetching 14 files:  86%|████████▌ | 12/14 [23:09<08:15, 247.52s/it]Fetching 14 files:  93%|█████████▎| 13/14 [23:22<03:16, 196.42s/it]Fetching 14 files: 100%|██████████| 14/14 [23:38<00:00, 153.64s/it]Fetching 14 files: 100%|██████████| 14/14 [23:38<00:00, 101.34s/it]
+[32m✓ Downloaded[0m
+  path: /data/cs3406/team19/.cache/huggingface/hub/models--meta-llama--Llama-3.1-8B-Instruct/snapshots/0e9e39f249a16976918f6564b8830bc894c89659
+DL_DONE

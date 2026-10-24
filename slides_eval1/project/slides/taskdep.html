@@ -1,0 +1,34 @@
+<section id="taskdep" data-transition="fade" style="background:#EEECE6;color:#1B2433;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B35A17">Head sensitivity · across tasks</p>
+<h2 style="font-size:64px;font-weight:600;line-height:1.15;color:#1B2433">Tasks agree on the top 3 heads; activity does not predict sensitivity</h2>
+</div>
+<div style="display:flex;gap:56px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<h3 style="font-size:32px;font-weight:600">Top 5 KV heads per task (2-bit)</h3>
+<table style="font-size:28px;color:#1B2433;font-family:'JetBrains Mono', 'Courier New', monospace">
+<tr><th style="width:12%">#</th><th style="width:29%">WikiText</th><th style="width:29%">Needle</th><th style="width:30%">GSM8K</th></tr>
+<tr style="background:#F8E3D1"><td>1</td><td>L0.kv0</td><td>L0.kv0</td><td>L0.kv0</td></tr>
+<tr style="background:#F8E3D1"><td>2</td><td>L0.kv1</td><td>L0.kv1</td><td>L0.kv1</td></tr>
+<tr style="background:#F8E3D1"><td>3</td><td>L0.kv2</td><td>L0.kv2</td><td>L0.kv2</td></tr>
+<tr><td>4</td><td>L27.kv1</td><td>L2.kv1</td><td>L3.kv2</td></tr>
+<tr><td>5</td><td>L0.kv3</td><td>L27.kv1</td><td>L15.kv3</td></tr>
+</table>
+<p style="font-size:26px;line-height:1.4;color:#4A5568">At 4-bit, the top 5 for every task are the same five key-outlier heads (97–100% of the damage).</p>
+</div>
+<div style="width:700px;display:flex;flex-direction:column;gap:20px">
+<h3 style="font-size:32px;font-weight:600">Rank correlation (Spearman)</h3>
+<table style="font-size:28px;color:#1B2433">
+<tr><th style="width:76%">Compared rankings</th><th style="width:24%;text-align:right">ρ</th></tr>
+<tr><td>WikiText vs needle</td><td style="text-align:right">0.47</td></tr>
+<tr><td>WikiText vs GSM8K</td><td style="text-align:right">0.60</td></tr>
+<tr><td>Needle vs GSM8K</td><td style="text-align:right">0.53</td></tr>
+<tr style="background:#F8E3D1"><td>Retrieval score vs needle sensitivity</td><td style="text-align:right">0.17</td></tr>
+<tr><td>Key outlier ratio vs LM sensitivity</td><td style="text-align:right">0.37</td></tr>
+</table>
+<p style="font-size:26px;line-height:1.4;color:#4A5568">Retrieval heads are active but barely react to quantization one at a time.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7280">Source: results/sens_qwen7b.csv, stats_qwen7b.csv · needle ranks below #3 are mostly ties at KL ≈ 0</p>
+<aside>Is sensitivity task-dependent? Partly. All three tasks agree on the top three heads in layer 0, then diverge: GSM8K cares about L3.kv2 and L15.kv3, needle about L2.kv1. The rankings correlate only 0.47 to 0.60. And the heads that look busiest, the retrieval heads, are not the ones that break under quantization: correlation 0.17.</aside>
+</section>

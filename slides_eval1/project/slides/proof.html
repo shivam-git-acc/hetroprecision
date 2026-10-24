@@ -1,0 +1,16 @@
+<section id="proof" data-transition="fade" style="background:#F7F6F2;color:#1B2433;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:44px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B35A17">Real outputs · greedy decoding, only the KV cache differs</p>
+<h2 style="font-size:64px;font-weight:600;line-height:1.15;color:#1B2433">What the numbers look like as text</h2>
+</div>
+<table style="font-size:26px;color:#1B2433">
+<tr><th style="width:30%">KV setting</th><th style="width:30%">Needle: “What is the passkey?” (16863)</th><th style="width:40%">GSM8K #7 (answer 160)</th></tr>
+<tr style="background:#DCE6F5"><td>BF16</td><td><span style="color:#1D4F8F">Correct:</span> 16863</td><td><span style="color:#1D4F8F">Correct:</span> “Total time = 40 + 20 + 100 = 160 minutes”</td></tr>
+<tr style="background:#F3DCDC"><td>Uniform 4-bit</td><td><span style="color:#9A2F2F">Wrong:</span> “2 210 1 be 1 1 1 1”</td><td><span style="color:#9A2F2F">Wrong:</span> “I, I I am you you to you You You I I.”</td></tr>
+<tr style="background:#DCE6F5"><td>Top-5 BF16, rest 4-bit</td><td><span style="color:#1D4F8F">Correct:</span> 16863</td><td><span style="color:#1D4F8F">Correct:</span> step-by-step, ends at 160 minutes</td></tr>
+<tr style="background:#F3DCDC"><td>Random-5 BF16, rest 2-bit</td><td><span style="color:#9A2F2F">Wrong:</span> “0101110100 light light light100”</td><td><span style="color:#9A2F2F">Wrong:</span> “ben . you 0 byb by() c c c”</td></tr>
+</table>
+<p style="font-size:30px;line-height:1.4;width:1600px">Free-text question (“Explain a KV cache”): BF16 and top-5 give a fluent, correct answer; uniform 4-bit says “Hello I apologize, you You You are correct to mew…”.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7280">Source: results/GENERATION_EXAMPLES.md · Qwen2.5-7B-Instruct, KV fake-quantized in prefill and every decode step</p>
+<aside>Numbers like perplexity 8,204 are abstract, so here is what the model actually writes. Same prompts, greedy decoding, only the KV cache setting changes. Uniform 4-bit and the random control produce gibberish. Protecting the five sensitive heads gives the correct passkey and the correct worked solution.</aside>
+</section>

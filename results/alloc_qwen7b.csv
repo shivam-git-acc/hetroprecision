@@ -1,0 +1,37 @@
+model,scheme,allocation,avg_bits,task,kl,ppl,acc
+Qwen/Qwen2.5-7B-Instruct,token,bf16,16,lm,0.0,6.311752796173096,nan
+Qwen/Qwen2.5-7B-Instruct,token,bf16,16,needle,0.0,1.0,1.0
+Qwen/Qwen2.5-7B-Instruct,token,bf16,16,gsm8k,0.0,3.5059783458709717,nan
+Qwen/Qwen2.5-7B-Instruct,token,uniform-2,2.25,lm,7.734188199043274,12950.494140625,nan
+Qwen/Qwen2.5-7B-Instruct,token,uniform-2,2.25,needle,5.020947262644768,151.55482482910156,0.0
+Qwen/Qwen2.5-7B-Instruct,token,uniform-2,2.25,gsm8k,7.883278399705887,3308.37939453125,nan
+Qwen/Qwen2.5-7B-Instruct,token,uniform-3,3.25,lm,7.340389311313629,9011.6943359375,nan
+Qwen/Qwen2.5-7B-Instruct,token,uniform-3,3.25,needle,5.697198301553726,298.03125,0.0
+Qwen/Qwen2.5-7B-Instruct,token,uniform-3,3.25,gsm8k,7.966394662857056,3505.456298828125,nan
+Qwen/Qwen2.5-7B-Instruct,token,uniform-4,4.25,lm,7.2956094443798065,8204.373046875,nan
+Qwen/Qwen2.5-7B-Instruct,token,uniform-4,4.25,needle,5.274318665266037,195.2574005126953,0.0
+Qwen/Qwen2.5-7B-Instruct,token,uniform-4,4.25,gsm8k,9.577184051275253,15208.6640625,nan
+Qwen/Qwen2.5-7B-Instruct,token,uniform-8,8.25,lm,0.009887570078717545,6.344173431396484,nan
+Qwen/Qwen2.5-7B-Instruct,token,uniform-8,8.25,needle,2.2051204492415605e-08,1.0,1.0
+Qwen/Qwen2.5-7B-Instruct,token,uniform-8,8.25,gsm8k,0.020268406391551252,3.6346113681793213,nan
+Qwen/Qwen2.5-7B-Instruct,token,top1-bf16 rest-2,2.373,lm,5.83547767996788,1968.0272216796875,nan
+Qwen/Qwen2.5-7B-Instruct,token,top1-bf16 rest-2,2.373,needle,3.5626506581902504,35.256526947021484,0.0
+Qwen/Qwen2.5-7B-Instruct,token,top1-bf16 rest-2,2.373,gsm8k,5.211863338947296,240.03846740722656,nan
+Qwen/Qwen2.5-7B-Instruct,token,top5-bf16 rest-2,2.864,lm,3.6851050704717636,224.9262237548828,nan
+Qwen/Qwen2.5-7B-Instruct,token,top5-bf16 rest-2,2.864,needle,3.8644439578056335,47.6767578125,0.0
+Qwen/Qwen2.5-7B-Instruct,token,top5-bf16 rest-2,2.864,gsm8k,3.0720852613449097,29.907859802246094,nan
+Qwen/Qwen2.5-7B-Instruct,token,top5-8bit rest-2,2.518,lm,3.788259044289589,249.01480102539062,nan
+Qwen/Qwen2.5-7B-Instruct,token,top5-8bit rest-2,2.518,needle,3.825166404247284,45.840431213378906,0.0
+Qwen/Qwen2.5-7B-Instruct,token,top5-8bit rest-2,2.518,gsm8k,2.898702085018158,27.690515518188477,nan
+Qwen/Qwen2.5-7B-Instruct,token,top10-bf16 rest-2,3.478,lm,3.1902931332588196,137.42123413085938,nan
+Qwen/Qwen2.5-7B-Instruct,token,top10-bf16 rest-2,3.478,needle,3.7266932278871536,41.541507720947266,0.0
+Qwen/Qwen2.5-7B-Instruct,token,top10-bf16 rest-2,3.478,gsm8k,2.680638439953327,21.289072036743164,nan
+Qwen/Qwen2.5-7B-Instruct,token,random5-bf16 rest-2 (control),2.864,lm,7.632985234260559,11715.640625,nan
+Qwen/Qwen2.5-7B-Instruct,token,random5-bf16 rest-2 (control),2.864,needle,5.013378277420998,150.4119873046875,0.0
+Qwen/Qwen2.5-7B-Instruct,token,random5-bf16 rest-2 (control),2.864,gsm8k,7.81786572933197,2994.9091796875,nan
+Qwen/Qwen2.5-7B-Instruct,token,top5-bf16 rest-3,3.819,lm,0.33594894502311945,8.34090518951416,nan
+Qwen/Qwen2.5-7B-Instruct,token,top5-bf16 rest-3,3.819,needle,0.21600916408225856,1.2411137819290161,0.8125
+Qwen/Qwen2.5-7B-Instruct,token,top5-bf16 rest-3,3.819,gsm8k,0.3422670466825366,3.807157516479492,nan
+Qwen/Qwen2.5-7B-Instruct,token,top5-bf16 rest-4,4.775,lm,0.08143924828618765,6.728091239929199,nan
+Qwen/Qwen2.5-7B-Instruct,token,top5-bf16 rest-4,4.775,needle,6.274115473562042e-08,1.0,1.0
+Qwen/Qwen2.5-7B-Instruct,token,top5-bf16 rest-4,4.775,gsm8k,0.11773395771160722,3.7238543033599854,nan

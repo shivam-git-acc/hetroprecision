@@ -1,0 +1,19 @@
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<00:35,  9.42it/s]Loading weights:   1%|          | 2/339 [00:00<00:36,  9.11it/s]Loading weights:   4%|▍         | 15/339 [00:00<00:05, 57.75it/s]Loading weights:   6%|▌         | 21/339 [00:00<00:06, 52.47it/s]Loading weights:  16%|█▌        | 55/339 [00:00<00:02, 133.49it/s]Loading weights:  28%|██▊       | 96/339 [00:00<00:01, 149.91it/s]Loading weights:  45%|████▌     | 154/339 [00:01<00:01, 168.61it/s]Loading weights:  68%|██████▊   | 232/339 [00:01<00:00, 224.56it/s]Loading weights:  86%|████████▌ | 290/339 [00:01<00:00, 279.18it/s]Loading weights:  95%|█████████▍| 321/339 [00:01<00:00, 284.31it/s]Loading weights: 100%|██████████| 339/339 [00:01<00:00, 212.51it/s]
+Using the latest cached version of the dataset since Salesforce/wikitext couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'wikitext-2-raw-v1' at /data/cs3406/team19/.cache/huggingface/datasets/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3 (last modified on Sat Oct 17 10:21:07 2026).
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (2517232 > 131072). Running this sequence through the model will result in indexing errors
+prompt tokens: 8162 (= 63 full groups of 128 + 98)
+
+Relative reconstruction error, mean over layers (and worst layer):
+scheme tensor                2b                3b                4b                8b
+token  K      0.9406 (L0 1.573) 0.4283 (L0 0.726) 0.1928 (L0 0.294) 0.0112 (L0 0.016)
+token  V      0.6608 (L4 1.010) 0.2834 (L4 0.418) 0.1321 (L4 0.194) 0.0079 (L4 0.011)
+kivi   K      0.3040 (L4 0.400) 0.1291 (L4 0.171) 0.0602 (L4 0.080) 0.0037 (L4 0.005)
+kivi   V      0.6608 (L4 1.010) 0.2834 (L4 0.418) 0.1321 (L4 0.194) 0.0079 (L4 0.011)
+
+End-to-end on this prompt, uniform allocation:
+  token 3-bit: KL=4.7674  answer correct=False  pred='s item0 if0' true='16863'
+  token 4-bit: KL=5.1222  answer correct=False  pred='2\n\n\n other' true='16863'
+  kivi  3-bit: KL=0.0000  answer correct=True  pred='16863' true='16863'
+  kivi  4-bit: KL=0.0000  answer correct=True  pred='16863' true='16863'
+DIAG_DONE

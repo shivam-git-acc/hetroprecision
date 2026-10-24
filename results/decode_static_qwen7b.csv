@@ -1,0 +1,2 @@
+model,cache,context,batch,status,ttft_s,tpot_ms_median,tpot_ms_q1,tpot_ms_q3,throughput_tok_s,kv_cache_gb,weights_gb,peak_mem_gb,min_bytes_per_step_gb,effective_bw_GBps
+Qwen/Qwen2.5-7B-Instruct,static,32768,8,ok,72.1936,299.979,299.584,300.221,26.67,15.06,15.232,39.476,30.292,101.0

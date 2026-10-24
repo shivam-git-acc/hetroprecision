@@ -1,0 +1,20 @@
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<00:35,  9.41it/s]Loading weights:   1%|          | 2/339 [00:00<00:37,  9.10it/s]Loading weights:   4%|▍         | 14/339 [00:00<00:06, 47.15it/s]Loading weights:  12%|█▏        | 40/339 [00:00<00:02, 104.93it/s]Loading weights:  25%|██▌       | 86/339 [00:00<00:01, 146.14it/s]Loading weights:  38%|███▊      | 129/339 [00:00<00:01, 193.40it/s]Loading weights:  51%|█████     | 173/339 [00:01<00:00, 202.02it/s]Loading weights:  67%|██████▋   | 227/339 [00:01<00:00, 193.10it/s]Loading weights:  84%|████████▍ | 286/339 [00:01<00:00, 243.27it/s]Loading weights: 100%|██████████| 339/339 [00:01<00:00, 212.18it/s]
+Using the latest cached version of the dataset since Salesforce/wikitext couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'wikitext-2-raw-v1' at /data/cs3406/team19/.cache/huggingface/datasets/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3 (last modified on Sat Oct 17 10:21:07 2026).
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (2517232 > 131072). Running this sequence through the model will result in indexing errors
+Using the latest cached version of the dataset since openai/gsm8k couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'main' at /data/cs3406/team19/.cache/huggingface/datasets/openai___gsm8k/main/0.0.0/740312add88f781978c0658806c59bc2815b9866 (last modified on Sat Oct 17 10:46:26 2026).
+[Needle retrieval (8K] BF16 (reference):  ✅ correct '16863' (1.0s)
+[Needle retrieval (8K] Uniform 4-bit (all 112 KV heads):  ❌ wrong '2\n210 1 be 1 1 1 1' (1.1s)
+[Needle retrieval (8K] Top-5 sensitive heads BF16, rest 4-bit:  ✅ correct '16863' (0.9s)
+[Needle retrieval (8K] Random-5 heads BF16, rest 2-bit (control):  ❌ wrong '0101110100 light light light100' (1.1s)
+[GSM8K math word prob] BF16 (reference):  ✅ correct 'To determine how long it takes Carla to download the 200 GB file under these con' (4.2s)
+[GSM8K math word prob] Uniform 4-bit (all 112 KV heads):  ❌ wrong 'I, I I am you you to you You You I I. I am you. you. I you I you.  Car\n\n I you. ' (6.0s)
+[GSM8K math word prob] Top-5 sensitive heads BF16, rest 4-bit:  ✅ correct 'To determine the total time it takes for Carla to download the 200 GB file given' (5.8s)
+[GSM8K math word prob] Random-5 heads BF16, rest 2-bit (control):  ❌ wrong 'ben\n\n\n. you\n\n0\n\n\n\n byb\n\n by()\n\n c\n\n\n c by c c c \n c c c\n by\n\n c b   c c (\n; c b ' (5.9s)
+[Free-text question] BF16 (reference):  'A KV cache in a transformer model stores previously attended key-value pairs fro' (1.2s)
+[Free-text question] Uniform 4-bit (all 112 KV heads):  'Hello I apologize, you You You are correct to mew Youwen. You I You You You You ' (3.0s)
+[Free-text question] Top-5 sensitive heads BF16, rest 4-bit:  'A KV cache in the context of a transformer model refers to a mechanism that stor' (1.4s)
+[Free-text question] Random-5 heads BF16, rest 2-bit (control):  "'re you by you You by by by by by by by you by by by by by by by by by by by by " (2.9s)
+wrote ../results/GENERATION_EXAMPLES.md
+GEN_DONE

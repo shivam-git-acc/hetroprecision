@@ -1,0 +1,27 @@
+<section id="measurefirst" data-transition="fade" style="background:#F7F6F2;color:#1B2433;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B35A17">Bottleneck · Nsight Systems, 32K × batch 8</p>
+<h2 style="font-size:64px;font-weight:600;line-height:1.15;color:#1B2433">Half the step copies the cache, and the obvious fix is 5.6× worse</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:30px;font-weight:600">DynamicCache (HF default) · 53.8 ms per token</p>
+<div style="display:flex;flex-direction:row;gap:2px;align-items:end">
+<div style="width:535px;display:flex;flex-direction:column;gap:8px"><p style="font-size:24px">Cache copy (torch.cat) 48.6%</p><div style="height:48px;background:#D9762B;border-radius:4px 0 0 4px"></div></div>
+<div style="width:287px;display:flex;flex-direction:column;gap:8px"><p style="font-size:24px">Weight GEMMs 26.1%</p><div style="height:48px;background:#8A94A6"></div></div>
+<div style="width:248px;display:flex;flex-direction:column;gap:8px"><p style="font-size:24px">Attention 22.5%</p><div style="height:48px;background:#2F64B4"></div></div>
+<div style="width:30px;height:48px;background:#CDD2DA;border-radius:0 4px 4px 0"></div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:30px;font-weight:600">StaticCache (pre-allocated) · 300 ms per token</p>
+<div style="display:flex;flex-direction:row;gap:2px;align-items:end">
+<div style="width:534px;display:flex;flex-direction:column;gap:8px"><p style="font-size:24px">Fallback attention kernel 48.5%</p><div style="height:48px;background:#2F64B4;border-radius:4px 0 0 4px"></div></div>
+<div style="width:513px;display:flex;flex-direction:column;gap:8px"><p style="font-size:24px">KV heads copied 7× (repeat_kv) 46.6%</p><div style="height:48px;background:#D9762B"></div></div>
+<div style="width:47px;height:48px;background:#8A94A6"></div>
+<div style="width:7px;height:48px;background:#CDD2DA;border-radius:0 4px 4px 0"></div>
+</div>
+</div>
+<p style="font-size:30px;line-height:1.4;color:#1B2433;width:1500px">The attention kernel itself already reads KV at <b>~1.26 TB/s</b>. The waste is cache management. A pre-allocated cache adds a mask, which drops FlashAttention for a kernel that cannot share KV heads.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7280">Source: results/nsys/decode_c32768_b8*, decode_static_c32768_b8* · shares of GPU kernel time per decode step</p>
+<aside>Measure first: we expected attention to dominate. Instead HuggingFace spends 49 percent of each step copying the whole cache to append one token. The obvious fix, a static cache, made it 5.6 times slower because the mask forced a fallback kernel that expands 4 KV heads into 28. So the right baseline is a paged, pre-allocated cache read directly by a kernel with native grouped-query attention, which is what vLLM and our planned kernel do.</aside>
+</section>

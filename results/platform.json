@@ -1,0 +1,20 @@
+{
+  "device": "NVIDIA RTX PRO 5000 Blackwell",
+  "compute_capability": "12.0",
+  "sm_count": 110,
+  "total_memory_gb": 50.754289664,
+  "l2_cache_mb": 96.0,
+  "torch": "2.14.1+cu130",
+  "cuda": "13.0",
+  "buffer_gib": 4.0,
+  "copy_bw_GBps_median": 1102.5967991419584,
+  "copy_bw_GBps_iqr": [
+    1101.8669827811545,
+    1103.2924110045064
+  ],
+  "read_bw_GBps_median": 1231.6886437032751,
+  "read_bw_GBps_iqr": [
+    1231.1999988847397,
+    1231.844079470579
+  ]
+}

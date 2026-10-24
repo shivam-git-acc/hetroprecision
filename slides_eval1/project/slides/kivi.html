@@ -1,0 +1,24 @@
+<section id="kivi" data-transition="fade" style="background:#F7F6F2;color:#1B2433;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:44px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B35A17">Quantizer axis · keys per token vs per channel (KIVI)</p>
+<h2 style="font-size:64px;font-weight:600;line-height:1.15;color:#1B2433">Quantizing keys per channel matters more than which heads get bits</h2>
+</div>
+<div style="display:flex;gap:56px;align-items:start">
+<table style="width:1000px;font-size:28px;color:#1B2433">
+<tr><th style="width:52%">Measure</th><th style="width:24%;text-align:right">Per-token</th><th style="width:24%;text-align:right">KIVI</th></tr>
+<tr><td>Key reconstruction error, 4-bit</td><td style="text-align:right">0.193</td><td style="text-align:right">0.060</td></tr>
+<tr><td>L0.kv0 alone at 2-bit, KL</td><td style="text-align:right">6.14</td><td style="text-align:right">0.020</td></tr>
+<tr><td>Layer 0 share of damage</td><td style="text-align:right">83%</td><td style="text-align:right">14%</td></tr>
+<tr style="background:#DCE6F5"><td><b>Uniform 4-bit, WikiText ppl</b></td><td style="text-align:right">8,204</td><td style="text-align:right"><b>6.09</b></td></tr>
+<tr style="background:#DCE6F5"><td><b>Uniform 4-bit, needle</b></td><td style="text-align:right">0%</td><td style="text-align:right"><b>100%</b></td></tr>
+</table>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#16202E;padding:44px;border-radius:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#E9A266">KIVI 2-bit fails quietly</p>
+<p style="font-size:28px;line-height:1.45;color:#F2F0EA">Needle answer <span style="color:#E9A266">16883</span> instead of 16863</p>
+<p style="font-size:28px;line-height:1.45;color:#F2F0EA">GSM8K fluent but wrong: <span style="color:#E9A266">“Initial 40 GB: 20 minutes”</span> (40% of 200 GB read as 40 GB)</p>
+<p style="font-size:28px;line-height:1.45;color:#BFC8D6">Protecting top-5 at 2-bit: ppl 8.84 vs 11.26 random, but needle 53% vs 66%</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7280">Source: diag_kivi.log, sens_qwen7b.csv, alloc_kivi_v2_qwen7b.csv (n=32, BF16 ppl 6.05), GENERATION_EXAMPLES_KIVI.md · KIVI keeps the last partial 128-token group in BF16</p>
+<aside>Qwen's outlier channels are what made per-token quantization so fragile. Quantizing keys per channel, as KIVI does, cuts key error three times, removes layer 0's special status and makes plain uniform 4-bit near-lossless. At 2-bit KIVI the model stays fluent but makes small factual and reasoning errors, which perplexity alone would hide. With a good quantizer, which heads you protect matters much less.</aside>
+</section>

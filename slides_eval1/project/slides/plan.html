@@ -1,0 +1,31 @@
+<section id="plan" data-transition="fade" style="background:#16202E;color:#F2F0EA;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#E9A266">Plan of action · weeks 6–9</p>
+<h2 style="font-size:64px;font-weight:600;line-height:1.15;color:#F2F0EA">A fused, paged decode kernel with per-head bit-widths</h2>
+</div>
+<div style="display:flex;gap:64px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<h3 style="font-size:32px;font-weight:600;color:#E9A266">What the data says the kernel must do</h3>
+<ol style="font-size:28px;line-height:1.5;color:#DDE3EC">
+<li>Paged, pre-allocated cache, native grouped-query attention: no copy, no repeat_kv</li>
+<li>Dequantize inside attention, never the whole cache</li>
+<li>Keys per channel with a BF16 residual window</li>
+<li>Per-head bits: a few heads at 8–16, the rest at 2–4</li>
+<li>Measure dispatch cost: one grouped launch, byte-balanced split-K, occupancy and tail idle</li>
+</ol>
+</div>
+<div style="width:640px;display:flex;flex-direction:column;gap:20px">
+<h3 style="font-size:32px;font-weight:600;color:#E9A266">Schedule</h3>
+<table style="font-size:26px;color:#DDE3EC">
+<tr><th style="width:18%;color:#F2F0EA">Week</th><th style="width:82%;color:#F2F0EA">Work</th></tr>
+<tr><td>6</td><td>BF16 paged split-K kernel; INT4/INT8 pack and fused unpack</td></tr>
+<tr><td>7</td><td>Eval 2: our kernel vs vLLM BF16 and FP8</td></tr>
+<tr><td>8</td><td>Per-head mixed precision, dispatch strategies, Llama-3.1-8B</td></tr>
+<tr><td>9</td><td>Capacity demo, ablations, report</td></tr>
+</table>
+<p style="font-size:24px;line-height:1.4;color:#BFC8D6">Open: FlashAttention’s 41 ms at 32K × 8; rerun KIVI sensitivity with the fix</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#BFC8D6">Code: scripts/ · Results: results/ (NOTES.md, HEAD_RESULTS.md, GENERATION_EXAMPLES*.md)</p>
+<aside>The measurements tell us what to build. A paged cache that is never copied, dequantization inside the attention kernel, keys quantized per channel, and per-head bit-widths where a handful of heads keep more bits. The question for weeks 6 to 9 is what the per-head dispatch costs, measured against vLLM's BF16 and FP8 baselines from today.</aside>
+</section>

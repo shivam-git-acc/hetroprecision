@@ -1,0 +1,15 @@
+<section id="rigor" data-transition="fade" style="background:#EEECE6;color:#1B2433;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B35A17">Rigor</p>
+<h2 style="font-size:64px;font-weight:600;line-height:1.15;color:#1B2433">What we measured wrong, and how we caught it</h2>
+</div>
+<table style="font-size:28px;color:#1B2433">
+<tr><th style="width:30%">Problem</th><th style="width:38%">Symptom</th><th style="width:32%">Fix and corrected result</th></tr>
+<tr><td>vLLM 0.31 ignored our backend setting</td><td>FP8 looked 51% faster: it was compared with a different kernel library</td><td>Engine argument, checked in the log: <b>−22%</b></td></tr>
+<tr><td>KIVI quantized a zero-padded last group</td><td>4-bit scored worse than 3-bit on needle and GSM8K</td><td>Keep the residual window in BF16: monotonic, 4-bit near-lossless</td></tr>
+<tr><td>Sink measured on token 0 only</td><td>GSM8K showed no attention sink</td><td>Chat template moves it to tokens 1–3: one third, as elsewhere</td></tr>
+<tr><td>Clocks cannot be locked</td><td>Same setting differed by up to 33% across days</td><td>Compare only within one session; report IQR</td></tr>
+</table>
+<p style="font-size:28px;line-height:1.4;color:#4A5568;width:1600px">Every number in this deck is the corrected one. The full log, including superseded values, is in results/NOTES.md.</p>
+<aside>Experimental rigour is graded, so here is what went wrong. Each problem showed up as a result that did not make physical sense, which is how we caught it: a speedup that was too large, more bits giving worse quality, a missing sink. Every figure in the deck is the corrected value.</aside>
+</section>

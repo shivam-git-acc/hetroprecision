@@ -1,0 +1,25 @@
+<section id="baseline" data-transition="fade" style="background:#F7F6F2;color:#1B2433;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B35A17">Baseline · HuggingFace BF16, batch 8</p>
+<h2 style="font-size:64px;font-weight:600;line-height:1.15;color:#1B2433">Decode slows 2.9× from 4K to 32K context</h2>
+</div>
+<div style="display:flex;gap:72px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:22px">
+<p style="font-size:26px;color:#4A5568">Time per output token, ms</p>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:center"><p style="width:72px;font-size:26px;font-weight:600">4K</p><div style="display:flex;flex-direction:column;gap:4px"><div style="display:flex;flex-direction:row;gap:12px;align-items:center"><div style="width:301px;height:30px;background:#D9762B;border-radius:0 4px 4px 0"></div><p style="font-size:24px">18.8</p></div><div style="display:flex;flex-direction:row;gap:12px;align-items:center"><div style="width:222px;height:30px;background:#8A94A6;border-radius:0 4px 4px 0"></div><p style="font-size:24px;color:#4A5568">13.9</p></div></div></div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:center"><p style="width:72px;font-size:26px;font-weight:600">8K</p><div style="display:flex;flex-direction:column;gap:4px"><div style="display:flex;flex-direction:row;gap:12px;align-items:center"><div style="width:381px;height:30px;background:#D9762B;border-radius:0 4px 4px 0"></div><p style="font-size:24px">23.8</p></div><div style="display:flex;flex-direction:row;gap:12px;align-items:center"><div style="width:248px;height:30px;background:#8A94A6;border-radius:0 4px 4px 0"></div><p style="font-size:24px;color:#4A5568">15.5</p></div></div></div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:center"><p style="width:72px;font-size:26px;font-weight:600">16K</p><div style="display:flex;flex-direction:column;gap:4px"><div style="display:flex;flex-direction:row;gap:12px;align-items:center"><div style="width:542px;height:30px;background:#D9762B;border-radius:0 4px 4px 0"></div><p style="font-size:24px">33.9</p></div><div style="display:flex;flex-direction:row;gap:12px;align-items:center"><div style="width:296px;height:30px;background:#8A94A6;border-radius:0 4px 4px 0"></div><p style="font-size:24px;color:#4A5568">18.5</p></div></div></div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:center"><p style="width:72px;font-size:26px;font-weight:600">32K</p><div style="display:flex;flex-direction:column;gap:4px"><div style="display:flex;flex-direction:row;gap:12px;align-items:center"><div style="width:861px;height:30px;background:#D9762B;border-radius:0 4px 4px 0"></div><p style="font-size:24px">53.8</p></div><div style="display:flex;flex-direction:row;gap:12px;align-items:center"><div style="width:394px;height:30px;background:#8A94A6;border-radius:0 4px 4px 0"></div><p style="font-size:24px;color:#4A5568">24.6</p></div></div></div>
+<div style="display:flex;flex-direction:row;gap:40px;align-items:center">
+<div style="display:flex;flex-direction:row;gap:12px;align-items:center"><div style="width:28px;height:28px;background:#D9762B;border-radius:4px"></div><p style="font-size:24px;color:#4A5568">Measured</p></div>
+<div style="display:flex;flex-direction:row;gap:12px;align-items:center"><div style="width:28px;height:28px;background:#8A94A6;border-radius:4px"></div><p style="font-size:24px;color:#4A5568">Bandwidth bound: (weights + KV) ÷ 1,232 GB/s</p></div>
+</div>
+</div>
+<div style="width:440px;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:8px"><p style="font-size:72px;font-weight:700;color:#1B2433">87%</p><p style="font-size:26px;line-height:1.4;color:#4A5568">of peak bandwidth at 4K × batch 1: reading the weights</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><p style="font-size:72px;font-weight:700;color:#B35A17">46%</p><p style="font-size:26px;line-height:1.4;color:#4A5568">at 32K × batch 8: more than half the bandwidth is wasted</p></div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7280">Source: results/decode_fp16_qwen7b.csv · 10 warmup + 50 timed steps, IQR under 0.1%</p>
+<aside>Short context and batch 1 are weight-bound and run near peak bandwidth. As the KV cache grows, the measured time pulls away from the bandwidth bound: at 32K batch 8 the ideal is 24.6 ms and we measure 53.8. Next slide: where that time goes.</aside>
+</section>

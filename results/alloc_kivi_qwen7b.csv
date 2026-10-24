@@ -1,0 +1,37 @@
+model,scheme,allocation,avg_bits,task,kl,ppl,acc
+Qwen/Qwen2.5-7B-Instruct,kivi,bf16,16,lm,0.0,6.311752796173096,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,bf16,16,needle,0.0,1.0,1.0
+Qwen/Qwen2.5-7B-Instruct,kivi,bf16,16,gsm8k,0.0,3.5059783458709717,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,uniform-2,2.25,lm,0.7165405414998531,11.930254936218262,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,uniform-2,2.25,needle,1.9674013424664736,7.152066707611084,0.0625
+Qwen/Qwen2.5-7B-Instruct,kivi,uniform-2,2.25,gsm8k,0.8092082943767309,4.3389129638671875,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,uniform-3,3.25,lm,0.05161904077976942,6.533456325531006,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,uniform-3,3.25,needle,0.0020214173882763357,1.002023458480835,1.0
+Qwen/Qwen2.5-7B-Instruct,kivi,uniform-3,3.25,gsm8k,0.14675715402700007,3.6562418937683105,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,uniform-4,4.25,lm,0.011692115163896233,6.358524799346924,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,uniform-4,4.25,needle,1.884963606755349,6.586114883422852,0.5
+Qwen/Qwen2.5-7B-Instruct,kivi,uniform-4,4.25,gsm8k,0.40766914625419304,4.410243988037109,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,uniform-8,8.25,lm,0.0008182396595657337,6.313238143920898,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,uniform-8,8.25,needle,2.225513698763499e-09,1.0,1.0
+Qwen/Qwen2.5-7B-Instruct,kivi,uniform-8,8.25,gsm8k,0.0008146529044097406,3.501012086868286,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,top1-bf16 rest-2,2.373,lm,0.6010959818959236,10.730831146240234,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,top1-bf16 rest-2,2.373,needle,1.2292968748952262,3.4188249111175537,0.1875
+Qwen/Qwen2.5-7B-Instruct,kivi,top1-bf16 rest-2,2.373,gsm8k,0.7296105101704597,4.205944538116455,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,top5-bf16 rest-2,2.864,lm,0.44196226447820663,9.19767951965332,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,top5-bf16 rest-2,2.864,needle,0.7492447742843069,2.1154019832611084,0.25
+Qwen/Qwen2.5-7B-Instruct,kivi,top5-bf16 rest-2,2.864,gsm8k,0.6573335845023394,3.828463315963745,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,top5-8bit rest-2,2.518,lm,0.43226882442831993,9.079742431640625,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,top5-8bit rest-2,2.518,needle,0.8515408213690989,2.343254566192627,0.3125
+Qwen/Qwen2.5-7B-Instruct,kivi,top5-8bit rest-2,2.518,gsm8k,0.6499622659757733,3.9099087715148926,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,top10-bf16 rest-2,3.478,lm,0.28782426472753286,7.891807556152344,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,top10-bf16 rest-2,3.478,needle,0.5180545764877138,1.6787587404251099,0.5
+Qwen/Qwen2.5-7B-Instruct,kivi,top10-bf16 rest-2,3.478,gsm8k,0.44706764444708824,3.4468331336975098,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,random5-bf16 rest-2 (control),2.864,lm,0.6604833770543337,11.22059440612793,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,random5-bf16 rest-2 (control),2.864,needle,1.0480274348665262,2.852020025253296,0.25
+Qwen/Qwen2.5-7B-Instruct,kivi,random5-bf16 rest-2 (control),2.864,gsm8k,0.6906341165304184,4.218772888183594,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,top5-bf16 rest-3,3.819,lm,0.043926817597821355,6.51373291015625,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,top5-bf16 rest-3,3.819,needle,1.1774816570490085e-06,1.0000011920928955,1.0
+Qwen/Qwen2.5-7B-Instruct,kivi,top5-bf16 rest-3,3.819,gsm8k,0.139198460849002,3.6943306922912598,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,top5-bf16 rest-4,4.775,lm,0.010224992118310183,6.348419666290283,nan
+Qwen/Qwen2.5-7B-Instruct,kivi,top5-bf16 rest-4,4.775,needle,0.2700046136801085,1.309970498085022,0.875
+Qwen/Qwen2.5-7B-Instruct,kivi,top5-bf16 rest-4,4.775,gsm8k,0.14676761464215815,3.768155097961426,nan
